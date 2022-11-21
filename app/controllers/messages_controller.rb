@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
     
     
     def index
-        @messages = Message.all
+        @pagy, @messages = pagy(Message.all, items: 3)
     end
     
     def show
